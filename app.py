@@ -46,43 +46,49 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
     
-    # Check if we need to seed
-    if not SiteContent.query.first():
-        seeds = [
-            # Global
-            {'key': 'site_name', 'value': 'KAVYA SOLAR', 'page': 'global'},
-            {'key': 'contact_phone', 'value': '+91 9536099664', 'page': 'global'},
-            {'key': 'contact_email', 'value': 'kavyasolarsystem@gmail.com', 'page': 'global'},
-            {'key': 'office_address', 'value': 'Buchdi Fatak, Dhandhera - Haridwar (U.K.)', 'page': 'global'},
-            
-            # Home Page
-            {'key': 'home_hero_title', 'value': 'Solar for Every Household', 'page': 'home'},
-            {'key': 'home_hero_sub', 'value': 'Get Central Government Subsidy under the PM Surya Ghar Free Electricity Scheme.', 'page': 'home'},
-            {'key': 'home_subsidy_amount', 'value': '₹85,800/-', 'page': 'home'},
-            {'key': 'home_emi_amount', 'value': '₹1,100/-', 'page': 'home'},
-            
-            # About Page
-            {'key': 'about_hero_title', 'value': 'Expert Solar Installers', 'page': 'about'},
-            {'key': 'about_mission', 'value': 'Trusted partner for PM Surya Ghar Yojana in Haridwar.', 'page': 'about'},
-            
-            # Technology
-            {'key': 'tech_partners_sub', 'value': 'Authorized partners of Adani Renewables, Waaree, and Tata Power.', 'page': 'technology'},
-            
-            # Images
-            {'key': 'home_hero_bg', 'value': 'https://images.unsplash.com/photo-1509391366360-fe5bb65585b3?q=80&w=2070', 'page': 'home'},
-            {'key': 'projects_hero_bg', 'value': 'https://images.unsplash.com/photo-1581094288338-2314dddb7ec4?q=80&w=2070', 'page': 'projects'}
-        ]
-        for s in seeds:
-            content = SiteContent(key=s['key'], value=s['value'], page=s['page'])
-            db.session.add(content)
+    # Start keep-alive thread
+    keep_alive_thread = threading.Thread(target=keep_alive, daemon=True)
+    keep_alive_thread.start()
+    
+    seeds = [
+        # Global
+        {'key': 'site_name', 'value': 'KAVYA SOLAR', 'page': 'global'},
+        {'key': 'contact_phone', 'value': '+91 9536099664', 'page': 'global'},
+        {'key': 'contact_email', 'value': 'kavyasolarsystem@gmail.com', 'page': 'global'},
+        {'key': 'office_address', 'value': 'Buchdi Fatak, Dhandhera - Haridwar (U.K.)', 'page': 'global'},
         
-        # Default Admin
-        if not Admin.query.filter_by(username='admin').first():
-            admin = Admin(username='admin')
-            admin.set_password('admin123')
-            db.session.add(admin)
-            
-        db.session.commit()
+        # Home Page
+        {'key': 'home_hero_title', 'value': 'Solar for Every Household', 'page': 'home'},
+        {'key': 'home_hero_sub', 'value': 'Get Central Government Subsidy under the PM Surya Ghar Free Electricity Scheme.', 'page': 'home'},
+        {'key': 'home_subsidy_amount', 'value': '₹85,800/-', 'page': 'home'},
+        {'key': 'home_emi_amount', 'value': '₹1,100/-', 'page': 'home'},
+        
+        # About Page
+        {'key': 'about_hero_title', 'value': 'Expert Solar Installers', 'page': 'about'},
+        {'key': 'about_mission', 'value': 'Trusted partner for PM Surya Ghar Yojana in Haridwar.', 'page': 'about'},
+        
+        # Technology
+        {'key': 'tech_partners_sub', 'value': 'Authorized partners of Adani Renewables, Waaree, and Tata Power.', 'page': 'technology'},
+        
+        # Images
+        {'key': 'home_hero_bg', 'value': '/static/assets/hero-solar.jpg', 'page': 'home'},
+        {'key': 'projects_hero_bg', 'value': '/static/assets/projects.jpg', 'page': 'projects'}
+    ]
+
+    # Ensure all seeds exist in the database even if Admin exists
+    for s in seeds:
+        existing_content = SiteContent.query.filter_by(key=s['key']).first()
+        if not existing_content:
+            new_content = SiteContent(key=s['key'], value=s['value'], page=s['page'])
+            db.session.add(new_content)
+    
+    # Default Admin
+    if not Admin.query.first():
+        admin = Admin(username='admin')
+        admin.set_password('admin123')
+        db.session.add(admin)
+        
+    db.session.commit()
 
 # Context Processor for Global Content
 @app.context_processor
