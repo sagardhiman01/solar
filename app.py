@@ -63,7 +63,11 @@ with app.app_context():
             {'key': 'about_mission', 'value': 'Trusted partner for PM Surya Ghar Yojana in Haridwar.', 'page': 'about'},
             
             # Technology
-            {'key': 'tech_partners_sub', 'value': 'Authorized partners of Adani Renewables, Waaree, and Tata Power.', 'page': 'technology'}
+            {'key': 'tech_partners_sub', 'value': 'Authorized partners of Adani Renewables, Waaree, and Tata Power.', 'page': 'technology'},
+            
+            # Images
+            {'key': 'home_hero_bg', 'value': 'https://images.unsplash.com/photo-1509391366360-fe5bb65585b3?q=80&w=2070', 'page': 'home'},
+            {'key': 'projects_hero_bg', 'value': 'https://images.unsplash.com/photo-1581094288338-2314dddb7ec4?q=80&w=2070', 'page': 'projects'}
         ]
         for s in seeds:
             content = SiteContent(key=s['key'], value=s['value'], page=s['page'])
@@ -89,7 +93,8 @@ def inject_global_content():
 # Main Routes
 @app.route('/')
 def index():
-    return render_template('index.html')
+    projects = Project.query.order_by(Project.page_order.asc()).limit(3).all()
+    return render_template('index.html', projects=projects)
 
 @app.route('/about.html')
 def about():
@@ -117,7 +122,8 @@ def reliability():
 
 @app.route('/products.html')
 def products():
-    return render_template('products.html')
+    projects = Project.query.order_by(Project.page_order.asc()).all()
+    return render_template('products.html', projects=projects)
 
 @app.route('/product-topcon.html')
 def product_topcon():
@@ -170,7 +176,34 @@ def admin_dashboard():
         return redirect(url_for('admin_login'))
     leads = Lead.query.order_by(Lead.created_at.desc()).all()
     all_content = SiteContent.query.all()
-    return render_template('admin_dashboard.html', leads=leads, all_content=all_content)
+    projects = Project.query.order_by(Project.page_order.asc()).all()
+    return render_template('admin_dashboard.html', leads=leads, all_content=all_content, projects=projects)
+
+@app.route('/admin/add_project', methods=['POST'])
+def add_project():
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('admin_login'))
+    
+    title = request.form.get('title')
+    image_path = request.form.get('image_path')
+    description = request.form.get('description')
+    
+    new_project = Project(title=title, image_path=image_path, description=description)
+    db.session.add(new_project)
+    db.session.commit()
+    flash('Project Added Successfully!', 'success')
+    return redirect(url_for('admin_dashboard'))
+
+@app.route('/admin/delete_project/<int:id>')
+def delete_project(id):
+    if not session.get('admin_logged_in'):
+        return redirect(url_for('admin_login'))
+    
+    project = Project.query.get_or_404(id)
+    db.session.delete(project)
+    db.session.commit()
+    flash('Project Deleted Successfully!', 'warning')
+    return redirect(url_for('admin_dashboard'))
 
 @app.route('/admin/update_content', methods=['POST'])
 def update_content():

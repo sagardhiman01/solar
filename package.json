@@ -1,0 +1,13 @@
+{
+  "name": "solaris-web",
+  "version": "1.0.0",
+  "description": "Premium Solar Panel Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y serve .",
+    "start": "npx -y serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
