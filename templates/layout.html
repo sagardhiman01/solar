@@ -18,10 +18,20 @@
     </div>
     <nav id="navbar">
         <div class="container">
-            <div class="logo">
+            <a href="{{ url_for('index') }}" class="logo" style="text-decoration: none;">
+                {% if content.site_logo and content.site_logo != 'text_only' %}
+                <img src="{{ content.site_logo }}" alt="{{ content.site_name }}" style="height: 45px; max-width: 250px; object-fit: contain;">
+                {% else %}
                 <span style="font-size: 1.8rem;">☀️</span>
-                <span class="logo-text">{{ content.site_name.split(' ')[0] }} <span class="gradient-text-gold">{{ content.site_name.split(' ')[1] }}</span></span>
-            </div>
+                <span class="logo-text" style="text-decoration: none;">
+                    {% set name_parts = content.site_name.split(' ') %}
+                    {{ name_parts[0] }} 
+                    {% if name_parts|length > 1 %}
+                    <span class="gradient-text-gold">{{ name_parts[1:] | join(' ') }}</span>
+                    {% endif %}
+                </span>
+                {% endif %}
+            </a>
             
             <div class="hamburger" id="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
                 <span></span>

@@ -52,6 +52,7 @@ with app.app_context():
     
     seeds = [
         # Global
+        {'key': 'site_logo', 'value': 'text_only', 'page': 'global'},
         {'key': 'site_name', 'value': 'KAVYA SOLAR', 'page': 'global'},
         {'key': 'contact_phone', 'value': '+91 9536099664', 'page': 'global'},
         {'key': 'contact_email', 'value': 'kavyasolarsystem@gmail.com', 'page': 'global'},
