@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block title %}Downloads | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-primary); color: white;">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">RESOURCES hub</span>
+            <h1 style="color: white;">Technical <span class="gradient-text-gold">Downloads</span></h1>
+            <p style="max-width: 700px; color: rgba(255,255,255,0.8);">Access our latest product brochures, certificates, and technical datasheets in high-resolution PDF format.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem;">
+                <!-- Category: Product Brochures -->
+                <div data-aos="fade-up">
+                    <h2 style="margin-bottom: 2rem; border-left: 5px solid var(--clr-accent); padding-left: 1.5rem;">Product Brochures</h2>
+                    <div style="display: grid; gap: 1rem;">
+                        <a href="#" style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; transition: var(--transition);">
+                            <span style="font-weight: 700; color: var(--clr-primary);">Kavya Solar TopCon Series 550W+</span>
+                            <i data-lucide="download" style="color: var(--clr-accent);"></i>
+                        </a>
+                        <a href="#" style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; transition: var(--transition);">
+                            <span style="font-weight: 700; color: var(--clr-primary);">Mono PERC Half-Cut Brochure</span>
+                            <i data-lucide="download" style="color: var(--clr-accent);"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Category: Certificates -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h2 style="margin-bottom: 2rem; border-left: 5px solid var(--clr-accent); padding-left: 1.5rem;">Quality Certificates</h2>
+                    <div style="display: grid; gap: 1rem;">
+                        <a href="#" style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; transition: var(--transition);">
+                            <span style="font-weight: 700; color: var(--clr-primary);">IEC 61215 / 61730 Standard</span>
+                            <i data-lucide="file-check" style="color: var(--clr-accent);"></i>
+                        </a>
+                        <a href="#" style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; transition: var(--transition);">
+                            <span style="font-weight: 700; color: var(--clr-primary);">BIS (Bureau of Indian Standards)</span>
+                            <i data-lucide="file-check" style="color: var(--clr-accent);"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

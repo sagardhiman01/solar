@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block title %}Contact Us | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">CONTACT US</span>
+            <h1>Let's Start Your <span class="gradient-text-gold">Energy Journey</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">Visit our Haridwar office or schedule a site assessment with our expert engineers.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem;" data-aos="fade-up">
+                <div style="background: var(--clr-primary); color: white; padding: 4rem; border-radius: 12px;">
+                    <h2 style="color: white; font-size: 2.2rem; margin-bottom: 2.5rem;">Visit the <span class="gradient-text-gold">Hub</span></h2>
+                    
+                    <div style="display: grid; gap: 2.5rem;">
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="color: var(--clr-accent);"><i data-lucide="map-pin" style="width: 28px; height: 28px;"></i></div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.5rem; letter-spacing: 1px;">OUR LOCATION</h4>
+                                <p style="color: rgba(255,255,255,0.7); line-height: 1.6;">{{ content.office_address }}</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="color: var(--clr-accent);"><i data-lucide="phone" style="width: 28px; height: 28px;"></i></div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.5rem; letter-spacing: 1px;">PHONE SUPPORT</h4>
+                                <p style="color: var(--clr-accent); font-weight: 700; font-size: 1.2rem;">{{ content.contact_phone }}</p>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1.5rem;">
+                            <div style="color: var(--clr-accent);"><i data-lucide="mail" style="width: 28px; height: 28px;"></i></div>
+                            <div>
+                                <h4 style="color: white; margin-bottom: 0.5rem; letter-spacing: 1px;">EMAIL INQUIRY</h4>
+                                <p style="color: rgba(255,255,255,0.7);">{{ content.contact_email }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" style="padding-top: 1rem;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">Request a Free Assessment</h3>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        {% for category, message in messages %}
+                          <div class="alert alert-{{ category }}" style="background: var(--clr-accent-light); color: var(--clr-primary); padding: 1.5rem; margin-bottom: 2rem; border-radius: 8px; font-weight: 600;">{{ message }}</div>
+                        {% endfor %}
+                      {% endif %}
+                    {% endwith %}
+                    <form method="POST">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: var(--clr-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Name</label>
+                                <input type="text" name="name" required style="width: 100%; padding: 1.2rem; border-radius: 4px; border: 1px solid #eee; background: #fafafa;">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: var(--clr-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Phone</label>
+                                <input type="tel" name="phone" required style="width: 100%; padding: 1.2rem; border-radius: 4px; border: 1px solid #eee; background: #fafafa;">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 2.5rem;">
+                            <label style="display: block; margin-bottom: 0.8rem; font-weight: 700; color: var(--clr-primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Project Requirements (Optional)</label>
+                            <textarea rows="4" style="width: 100%; padding: 1.2rem; border-radius: 4px; border: 1px solid #eee; background: #fafafa; font-family: inherit;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1.5rem;">SUBMIT ASSESSMENT REQUEST</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

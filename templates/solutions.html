@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+{% block title %}Solutions | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">ENERGY SOLUTIONS</span>
+            <h1>Tailored for <span class="gradient-text-gold">Efficiency</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">Comprehensive solar services from residential rooftops to industrial power plants.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="icon-box green-lite"><i data-lucide="home"></i></div>
+                    <h3>RESIDENTIAL SOLAR</h3>
+                    <p>Designed specifically for the PM Surya Ghar scheme, maximizing your ₹85,800/- subsidy benefit.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box blue-lite"><i data-lucide="building"></i></div>
+                    <h3>COMMERCIAL SOLAR</h3>
+                    <p>High-yield solutions for offices and hotels in Haridwar, reducing operational costs significantly.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box green-lite"><i data-lucide="factory"></i></div>
+                    <h3>INDUSTRIAL PROJECTS</h3>
+                    <p>Large scale MW-level installations utilizing the latest TopCon modules for maximum generation.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 5rem; padding: 4rem; border: 1px solid #eee; border-radius: 12px;" data-aos="zoom-in">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+                    <div>
+                        <h2 style="margin-bottom: 2rem;">Full-Cycle Execution</h2>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: var(--clr-text-light);"><i data-lucide="check-circle" style="color: var(--clr-accent);"></i> Site assessment & feasibility study</li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: var(--clr-text-light);"><i data-lucide="check-circle" style="color: var(--clr-accent);"></i> System design & engineering</li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: var(--clr-text-light);"><i data-lucide="check-circle" style="color: var(--clr-accent);"></i> Subsidy & government paperwork</li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: var(--clr-text-light);"><i data-lucide="check-circle" style="color: var(--clr-accent);"></i> O&M (Operation & Maintenance)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <img src="{{ url_for('static', filename='assets/solutions.jpg') }}" alt="Solar Solutions" style="width: 100%; border-radius: 8px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

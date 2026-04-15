@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block title %}Our Journey | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-primary); color: white;">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">THE MILESTONES</span>
+            <h1 style="color: white;">Our <span class="gradient-text-gold">Journey</span></h1>
+            <p style="max-width: 700px; color: rgba(255,255,255,0.8);">Tracing the evolution of {{ content.site_name }} from a local startup to a regional solar powerhouse.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="position: relative; max-width: 1000px; margin: 0 auto; padding: 4rem 0;">
+                <!-- Vertical Line -->
+                <div style="position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background: var(--clr-accent-light); transform: translateX(-50%);"></div>
+
+                <!-- 2022 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6rem; width: 100%; position: relative;" data-aos="fade-right">
+                    <div style="width: 45%; text-align: right;">
+                        <h2 style="color: var(--clr-accent); font-size: 3rem;">2022</h2>
+                        <h3 style="margin-bottom: 1rem;">Foundation</h3>
+                        <p style="color: var(--clr-text-light);">Incorporated in Haridwar with a vision to provide quality solar installations to households.</p>
+                    </div>
+                    <div style="width: 30px; height: 30px; background: var(--clr-accent); border-radius: 50%; z-index: 2; border: 5px solid white;"></div>
+                    <div style="width: 45%;"></div>
+                </div>
+
+                <!-- 2023 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6rem; width: 100%; position: relative;" data-aos="fade-left">
+                    <div style="width: 45%;"></div>
+                    <div style="width: 30px; height: 30px; background: var(--clr-accent); border-radius: 50%; z-index: 2; border: 5px solid white;"></div>
+                    <div style="width: 45%; text-align: left;">
+                        <h2 style="color: var(--clr-accent); font-size: 3rem;">2023</h2>
+                        <h3 style="margin-bottom: 1rem;">Major Partnership</h3>
+                        <p style="color: var(--clr-text-light);">Became an authorized partner for Adani Renewables and Waaree Solar, expanding technology access.</p>
+                    </div>
+                </div>
+
+                <!-- 2024 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6rem; width: 100%; position: relative;" data-aos="fade-right">
+                    <div style="width: 45%; text-align: right;">
+                        <h2 style="color: var(--clr-accent); font-size: 3rem;">2024</h2>
+                        <h3 style="margin-bottom: 1rem;">PM Surya Ghar Launch</h3>
+                        <p style="color: var(--clr-text-light);">Empanelled as a lead partner for the PM Surya Ghar Muft Bijli Yojana in Uttarakhand region.</p>
+                    </div>
+                    <div style="width: 30px; height: 30px; background: var(--clr-accent); border-radius: 50%; z-index: 2; border: 5px solid white;"></div>
+                    <div style="width: 45%;"></div>
+                </div>
+
+                <!-- 2026 -->
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; position: relative;" data-aos="fade-left">
+                    <div style="width: 45%;"></div>
+                    <div style="width: 30px; height: 30px; background: var(--clr-accent); border-radius: 50%; z-index: 2; border: 5px solid white;"></div>
+                    <div style="width: 45%; text-align: left;">
+                        <h2 style="color: var(--clr-accent); font-size: 3rem;">2026</h2>
+                        <h3 style="margin-bottom: 1rem;">Future Vision</h3>
+                        <p style="color: var(--clr-text-light);">Expanding services to include industrial energy storage and smart grid solutions for MSMEs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Admin Login | {{ content.site_name }}{% endblock %}
+{% block content %}
+<section style="padding: 10rem 0 6rem; min-height: 80vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--clr-bg-light), #e8f4f5);">
+    <div class="container">
+        <div style="max-width: 450px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); overflow: hidden;">
+            <div style="background: var(--clr-primary); padding: 2.5rem; text-align: center;">
+                <span style="font-size: 2.5rem;">🔒</span>
+                <h2 style="color: white; margin-top: 1rem; font-size: 1.5rem;">Admin Panel</h2>
+                <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 0.5rem;">Kavya Solar Management System</p>
+            </div>
+            <div style="padding: 2.5rem;">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                    {% for category, message in messages %}
+                      <div style="padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; background: #fee2e2; color: #991b1b; font-weight: 600; font-size: 0.9rem;">{{ message }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
+                <form method="POST">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" style="padding: 1.2rem; margin-top: 0.5rem;">LOGIN TO DASHBOARD</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

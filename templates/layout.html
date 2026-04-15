@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ content.site_name }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container" style="display: flex; justify-content: flex-end; gap: 1rem;">
+            <span class="badge-mini">PM SURYA GHAR AUTHORIZED</span>
+            <span class="badge-mini secondary">ZERO BILLS FOR HOME</span>
+        </div>
+    </div>
+    <nav id="navbar">
+        <div class="container">
+            <div class="logo">
+                <span style="font-size: 1.8rem;">☀️</span>
+                <span class="logo-text">{{ content.site_name.split(' ')[0] }} <span class="gradient-text-gold">{{ content.site_name.split(' ')[1] }}</span></span>
+            </div>
+            
+            <div class="hamburger" id="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">HOME</a></li>
+                
+                <li>
+                    <a href="{{ url_for('about') }}">WHY GO SOLAR? <i data-lucide="chevron-down" style="width: 14px; display: inline-block;"></i></a>
+                    <div class="mega-menu" style="width: 300px; grid-template-columns: 1fr;">
+                        <div>
+                            <ul>
+                                <li><a href="{{ url_for('about') }}">About Our Expert Team</a></li>
+                                <li><a href="{{ url_for('quality') }}">Why Trust Our Quality?</a></li>
+                                <li><a href="{{ url_for('journey') }}">Our Haridwar Impact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="{{ url_for('products') }}">PACKAGES <i data-lucide="chevron-down" style="width: 14px; display: inline-block;"></i></a>
+                    <div class="mega-menu" style="width: 300px; grid-template-columns: 1fr;">
+                        <div>
+                            <h4>HOME SOLUTIONS</h4>
+                            <ul>
+                                <li><a href="{{ url_for('products') }}">3kW Solar Package</a></li>
+                                <li><a href="{{ url_for('products') }}">5kW Solar Package</a></li>
+                                <li><a href="{{ url_for('products') }}">10kW Solar Package</a></li>
+                                <li><a href="{{ url_for('product_topcon') }}">Premium TopCon Series</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="{{ url_for('news') }}">SUBSIDY GUIDE</a></li>
+                <li><a href="{{ url_for('media') }}">INSTALLATIONS</a></li>
+                <li><a href="{{ url_for('contact') }}" class="btn btn-primary" style="padding: 0.6rem 1.2rem; color: white;">GET FREE QUOTE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>{{ content.site_name }}</h2>
+                    <p style="color: rgba(255,255,255,0.7); max-width: 300px;">Haridwar's favorite home solar company. Helping families save up to 100% on electricity bills since 10+ years.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="{{ url_for('index') }}">Home</a></li>
+                        <li><a href="{{ url_for('about') }}">About Our Team</a></li>
+                        <li><a href="{{ url_for('news') }}">Subsidy Guide</a></li>
+                        <li><a href="{{ url_for('contact') }}">Get Free Quote</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>SOLAR FOR HOME</h4>
+                    <ul>
+                        <li><a href="#">Save Electricity</a></li>
+                        <li><a href="#">Household Modules</a></li>
+                        <li><a href="#">Home Inverters</a></li>
+                        <li><a href="#">AMC Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>VISIT OUR SHOP</h4>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">{{ content.office_address }}</p>
+                    <p style="color: var(--clr-accent); font-weight: 700;">{{ content.contact_phone }}</p>
+                    <p style="color: rgba(255,255,255,0.7);">{{ content.contact_email }}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 {{ content.site_name }}. Making Haridwar Green, One Home at a Time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

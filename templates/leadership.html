@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Our Team | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-bg-light);">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">THE EXPERTS BEHIND</span>
+            <h1>Our Expert <span class="gradient-text-gold">Site Team</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">Meet the specialized engineers and consultants who will help your home go green.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="feature-grid">
+                <!-- Leader 1 -->
+                <div class="feature-card" data-aos="fade-up" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div style="background: var(--clr-bg-light); height: 350px; display: flex; align-items: flex-end; justify-content: center;">
+                         <i data-lucide="user" style="width: 200px; height: 200px; color: #ccc; margin-bottom: -50px;"></i>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--clr-primary);">FOUNDER</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">10+ Years Experience</p>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--clr-text-light);">Leading the vision to make every home in Haridwar independent from high electricity bills.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 2 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div style="background: var(--clr-bg-light); height: 350px; display: flex; align-items: flex-end; justify-content: center;">
+                         <i data-lucide="user" style="width: 200px; height: 200px; color: #ccc; margin-bottom: -50px;"></i>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--clr-primary);">CHIEF ENGINEER</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Technical Site Lead</p>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--clr-text-light);">Ensuring that every home installation is technically perfect and safe for your family.</p>
+                    </div>
+                </div>
+
+                <!-- Leader 3 -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" style="padding: 0; overflow: hidden; text-align: center;">
+                    <div style="background: var(--clr-bg-light); height: 350px; display: flex; align-items: flex-end; justify-content: center;">
+                         <i data-lucide="user" style="width: 200px; height: 200px; color: #ccc; margin-bottom: -50px;"></i>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="margin-bottom: 0.5rem; color: var(--clr-primary);">SUBSIDY HEAD</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Govt. Policy Expert</p>
+                        <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--clr-text-light);">Managing all PM Surya Ghar subsidy paperwork to ensure you get your cash benefits on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

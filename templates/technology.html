@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}Technology | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">ADVANCED TECHNOLOGY</span>
+            <h1>Engineered for <span class="gradient-text-gold">Peak Performance</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">{{ content.tech_partners_sub }}</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: center;">
+                <div data-aos="fade-right">
+                    <h2 style="font-size: 2.2rem; margin-bottom: 2.5rem; color: var(--clr-primary);">Authorized Retail Brands</h2>
+                    <div class="feature-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
+                        <div style="display: flex; gap: 2rem; align-items: center; padding: 2rem; background: var(--clr-bg-light); border-radius: 8px;">
+                            <span style="font-size: 1.5rem; color: var(--clr-accent); font-weight: 800;">01</span>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Adani Renewables</h4>
+                                <p style="font-size: 0.9rem; color: var(--clr-text-light);">We are authorized retailers for Adani modules known for extreme durability.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 2rem; align-items: center; padding: 2rem; background: var(--clr-bg-light); border-radius: 8px;">
+                            <span style="font-size: 1.5rem; color: var(--clr-accent); font-weight: 800;">02</span>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Waaree Energies</h4>
+                                <p style="font-size: 0.9rem; color: var(--clr-text-light);">Providing Tier-1 Waaree high-efficiency panels matching global benchmarks.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 2rem; align-items: center; padding: 2rem; background: var(--clr-bg-light); border-radius: 8px;">
+                            <span style="font-size: 1.5rem; color: var(--clr-accent); font-weight: 800;">03</span>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Tata Power</h4>
+                                <p style="font-size: 0.9rem; color: var(--clr-text-light);">Authorized dealer for Tata's trusted rooftop solar solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div style="background: var(--clr-primary); padding: 3rem; border-radius: 12px; color: white;">
+                        <h3 style="color: white; margin-bottom: 1.5rem; font-size: 1.5rem;">The Components of Quality</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem; line-height: 1.8;">Our technology stack includes smart monitoring inverters and safe LiFePO4 batteries, ensuring your solar system is an asset for the next 25+ years.</p>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i data-lucide="zap" style="color: var(--clr-accent);"></i> Mono PERC Cells</li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i data-lucide="zap" style="color: var(--clr-accent);"></i> TopCon Bifacial</li>
+                            <li style="margin-bottom: 1rem; display: flex; gap: 1rem; color: rgba(255,255,255,0.9); font-weight: 600;"><i data-lucide="zap" style="color: var(--clr-accent);"></i> Hybrid Inverters</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

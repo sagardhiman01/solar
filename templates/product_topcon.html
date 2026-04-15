@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block title %}TopCon Series | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-bg-light);">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">TECHNICAL SPECIFICATIONS</span>
+            <h1>TopCon <span class="gradient-text-gold">Bifacial</span> Series</h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">The next generation of solar energy. N-Type technology with up to 22.5% efficiency.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start;">
+                 <div data-aos="fade-right">
+                    <img src="https://rayzonsolar.com/assets/img/products/product-1.png" alt="TopCon Module Detail" style="width: 100%; border-radius: 12px;">
+                    <div style="margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <h4 style="color: var(--clr-primary);">585W</h4>
+                            <p style="font-size: 0.7rem; color: var(--clr-text-light);">MAX POWER</p>
+                        </div>
+                        <div style="background: var(--clr-bg-light); padding: 1.5rem; border-radius: 8px; text-align: center;">
+                            <h4 style="color: var(--clr-primary);">22.6%</h4>
+                            <p style="font-size: 0.7rem; color: var(--clr-text-light);">EFFICIENCY</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <h2 style="margin-bottom: 2rem;">Technical Parameters</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 3rem;">
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">Wattage (Pmax)</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">560W - 585W</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">Cell Type</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">N-Type TopCon (182mm)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">No. of Cells</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">144 (6 x 24) Half-Cut</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">Module Efficiency</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">Up to 22.6%</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">Voc (V)</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">51.4V - 51.9V</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #eee;">
+                            <td style="padding: 1.2rem; font-weight: 700; color: var(--clr-primary);">Glass Type</td>
+                            <td style="padding: 1.2rem; color: var(--clr-text-light);">Dual Glass (Semi-Tempered)</td>
+                        </tr>
+                    </table>
+
+                    <div style="background: var(--clr-primary); padding: 3rem; border-radius: 12px; color: white;">
+                        <h4 style="color: var(--clr-accent); margin-bottom: 1rem;">WARRANTY & ASSURANCE</h4>
+                        <ul style="list-style: none;">
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 1rem;"><i data-lucide="check" style="color: var(--clr-accent);"></i> 12 Years Workmanship Warranty</li>
+                            <li style="margin-bottom: 0.8rem; display: flex; gap: 1rem;"><i data-lucide="check" style="color: var(--clr-accent);"></i> 30 Years Linear Power Warranty</li>
+                            <li style="display: flex; gap: 1rem;"><i data-lucide="check" style="color: var(--clr-accent);"></i> Insurance Backed Warranty Options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}News & Updates | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-bg-light);">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">ANNOUNCEMENTS</span>
+            <h1>News & <span class="gradient-text-gold">Archives</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">Stay updated with the latest breakthroughs, partnerships, and market trends at {{ content.site_name }}.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; gap: 4rem;">
+                <!-- News 1 -->
+                <div style="display: grid; grid-template-columns: 350px 1fr; gap: 3rem; align-items: center;" data-aos="fade-up">
+                    <div style="background: var(--clr-bg-light); height: 250px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="store" style="width: 80px; height: 80px; color: var(--clr-accent); opacity: 0.5;"></i>
+                    </div>
+                    <div>
+                        <span style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem;">APRIL 12, 2026 | RETAIL</span>
+                        <h2 style="margin: 1rem 0; font-size: 2rem;">Kavya Solar Opens New Premium Showroom in Haridwar Hub</h2>
+                        <p style="color: var(--clr-text-light); margin-bottom: 1.5rem;">We are proud to announce the grand opening of our latest retail outlet, featuring the newest range of Adani and Tata Power solar modules with on-spot subsidy consultation.</p>
+                        <a href="#" style="color: var(--clr-primary); font-weight: 700; text-decoration: underline;">READ FULL STORY</a>
+                    </div>
+                </div>
+
+                <!-- News 2 -->
+                <div style="display: grid; grid-template-columns: 350px 1fr; gap: 3rem; align-items: center;" data-aos="fade-up" data-aos-delay="100">
+                    <div style="background: var(--clr-bg-light); height: 250px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                        <i data-lucide="newspaper" style="width: 80px; height: 80px; color: var(--clr-accent); opacity: 0.5;"></i>
+                    </div>
+                    <div>
+                        <span style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem;">MARCH 30, 2026 | INDUSTRY</span>
+                        <h2 style="margin: 1rem 0; font-size: 2rem;">Recognized as Top-Tier Partner for PM Surya Ghar Yojana</h2>
+                        <p style="color: var(--clr-text-light); margin-bottom: 1.5rem;">MNRE has officially recognized Kavya Solar as a leading empanelled partner for residential solar deployment in the Uttarakhand region.</p>
+                        <a href="#" style="color: var(--clr-primary); font-weight: 700; text-decoration: underline;">READ FULL STORY</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}Our Projects | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">PROJECT PORTFOLIO</span>
+            <h1>Success <span class="gradient-text-gold">Stories</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">Showcasing Haridwar's transition to renewable energy through our benchmark installations.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" style="padding: 0; overflow: hidden;">
+                    <img src="{{ url_for('static', filename='assets/hero-solar.jpg') }}" alt="Residential Project" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2.5rem;">
+                        <span style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem;">RESIDENTIAL | HARIDWAR</span>
+                        <h3 style="margin: 0.8rem 0;">Smart Home Solar</h3>
+                        <p style="font-size: 0.9rem; color: var(--clr-text-light);">Detailed 8kW system designed for maximum subsidy benefits under PM Surya Ghar Muft Bijli Yojana.</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" style="padding: 0; overflow: hidden;">
+                    <img src="{{ url_for('static', filename='assets/solutions.jpg') }}" alt="Commercial Project" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2.5rem;">
+                        <span style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem;">COMMERCIAL | ROORKEE</span>
+                        <h3 style="margin: 0.8rem 0;">Industrial Hub Project</h3>
+                        <p style="font-size: 0.9rem; color: var(--clr-text-light);">100kW rooftop plant utilizing Adani Renewables Mono PERC modules for energy cost reduction.</p>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" style="padding: 0; overflow: hidden;">
+                    <img src="{{ url_for('static', filename='assets/about.jpg') }}" alt="Institutional Project" style="width: 100%; height: 250px; object-fit: cover;">
+                    <div style="padding: 2.5rem;">
+                        <span style="color: var(--clr-accent); font-weight: 700; font-size: 0.8rem;">INSTITUTIONAL | UTTARAKHAND</span>
+                        <h3 style="margin: 0.8rem 0;">School Campus Energy</h3>
+                        <p style="font-size: 0.9rem; color: var(--clr-text-light);">Sustainable institutional energy setup focused on zero carbon footprint and long-term savings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

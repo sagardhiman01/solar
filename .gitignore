@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+instance/
+*.db
+.env
+node_modules/
+kavya-react-app/node_modules/
+dairy-2-main/
+hostinger-deploy/
+.DS_Store

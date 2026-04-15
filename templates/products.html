@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% block title %}Solar Packages | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-primary); color: white;">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">HOUSEHOLD SOLUTIONS</span>
+            <h1 style="color: white;">Smart <span class="gradient-text-gold">Home Packages</span></h1>
+            <p style="max-width: 700px; color: rgba(255,255,255,0.8);">All-inclusive solar bundles designed to fit your roof and your budget perfectly.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="feature-grid">
+                <!-- 3kW Package -->
+                <div class="feature-card" data-aos="fade-up" style="padding: 0; border: 1px solid #eee;">
+                    <div style="background: var(--clr-bg-light); height: 250px; display: flex; align-items: center; justify-content: center; position: relative;">
+                         <i data-lucide="home" style="width: 60px; height: 60px; color: var(--clr-accent);"></i>
+                         <div style="position: absolute; top: 1rem; right: 1rem; background: var(--clr-primary); color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">3kW SOLUTION</div>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="color: var(--clr-primary);">Small Home Package</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; margin-bottom: 1.5rem;">Ideal for: 2-3 BHK Houses</p>
+                        <p style="margin-bottom: 2rem; color: var(--clr-text-light);">Perfect for running fans, lights, fridge, and a washing machine. Qualifies for high Central Government subsidy.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Save up to ₹3,500/month</li>
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Panel Warranty: 25 Years</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary" style="width: 100%;">GET PRICE QUOTE</a>
+                    </div>
+                </div>
+
+                <!-- 5kW Package -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100" style="padding: 0; border: 1px solid #eee;">
+                    <div style="background: var(--clr-bg-light); height: 250px; display: flex; align-items: center; justify-content: center; position: relative;">
+                         <i data-lucide="building" style="width: 60px; height: 60px; color: var(--clr-accent);"></i>
+                         <div style="position: absolute; top: 1rem; right: 1rem; background: var(--clr-accent); color: var(--clr-primary); padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">5kW SOLUTION</div>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="color: var(--clr-primary);">Medium Home Package</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; margin-bottom: 1.5rem;">Ideal for: 3-4 BHK with ACs</p>
+                        <p style="margin-bottom: 2rem; color: var(--clr-text-light);">Designed to run multiple ACs, lights, and kitchen appliances. Most popular choice for Haridwar homes.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Save up to ₹6,500/month</li>
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Max Subsidy Benefit</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary" style="width: 100%;">GET PRICE QUOTE</a>
+                    </div>
+                </div>
+
+                <!-- 10kW Package -->
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200" style="padding: 0; border: 1px solid #eee;">
+                    <div style="background: var(--clr-bg-light); height: 250px; display: flex; align-items: center; justify-content: center; position: relative;">
+                         <i data-lucide="factory" style="width: 60px; height: 60px; color: var(--clr-accent);"></i>
+                         <div style="position: absolute; top: 1rem; right: 1rem; background: #333; color: white; padding: 0.3rem 0.8rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700;">10kW+ SOLUTION</div>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <h3 style="color: var(--clr-primary);">Large Villa Package</h3>
+                        <p style="color: var(--clr-accent); font-weight: 700; margin-bottom: 1.5rem;">Ideal for: Joint Families / Villas</p>
+                        <p style="margin-bottom: 2rem; color: var(--clr-text-light);">Heavy-duty solution for large villas with centralized AC units and high energy consumption.</p>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Save up to ₹12,000/month</li>
+                            <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; font-size: 0.9rem;"><i data-lucide="check" style="width: 16px; color: var(--clr-accent);"></i> Custom Engineering Included</li>
+                        </ul>
+                        <a href="{{ url_for('contact') }}" class="btn btn-primary" style="width: 100%;">GET PRICE QUOTE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

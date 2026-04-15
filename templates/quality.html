@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}Why Trust Us? | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-bg-light);">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">YOUR ROOF IS SAFE</span>
+            <h1 style="color: var(--clr-primary);">Why Trust Us for <span class="gradient-text-gold">Your Home?</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">We understand that installing solar is a big decision. Here is why Haridwar homeowners choose Kavya Solar.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center;">
+                <div data-aos="fade-right">
+                    <div style="background: var(--clr-primary); color: white; padding: 3rem; border-radius: 12px;">
+                        <h3 style="color: white; margin-bottom: 2rem;">Our Home Warranty</h3>
+                        <div style="display: grid; gap: 1.5rem;">
+                            <div style="display: flex; gap: 1rem;">
+                                <i data-lucide="shield" style="color: var(--clr-accent);"></i>
+                                <span>25 Years Performance Warranty</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <i data-lucide="shield" style="color: var(--clr-accent);"></i>
+                                <span>12 Years Hardware Warranty</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <i data-lucide="shield" style="color: var(--clr-accent);"></i>
+                                <span>5 Years Free Service Visits</span>
+                            </div>
+                            <div style="display: flex; gap: 1rem;">
+                                <i data-lucide="shield" style="color: var(--clr-accent);"></i>
+                                <span>100% Subsidy Handling Included</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Worry-Free Solar Installation</h2>
+                    <p style="margin-bottom: 1.5rem; color: var(--clr-text-light);">Choosing Kavya Solar means zero stress for your family. We don't just "install and leave"—we treat your roof like our own. Our engineers ensure that your home's structure is protected and the solar system is optimized for max savings.</p>
+                    <p style="color: var(--clr-text-light);">We use high-grade aluminum structures and high-efficiency panels that are tested for the Haridwar monsoon and heat, ensuring your investment stays safe for decades.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consumer Proof -->
+    <section class="section-padding" style="background: var(--clr-primary); color: white;">
+        <div class="container">
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+                <div class="stat-item" data-aos="zoom-in">
+                    <h3 style="color: var(--clr-accent); font-size: 2rem;">IEC</h3>
+                    <p>International Safety Tested</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 style="color: var(--clr-accent); font-size: 2rem;">BIS</h3>
+                    <p>Verified by Indian Standards</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 style="color: var(--clr-accent); font-size: 2rem;">MNRE</h3>
+                    <p>Govt. Approved Components</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

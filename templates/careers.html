@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block title %}Careers | {{ content.site_name }}{% endblock %}
+{% block content %}
+    <header class="page-hero" data-aos="fade-down" style="background: var(--clr-bg-light);">
+        <div class="container">
+            <span class="gradient-text-gold" style="font-weight: 800; letter-spacing: 2px;">JOIN THE REVOLUTION</span>
+            <h1>Work with <span class="gradient-text-gold">Excellence</span></h1>
+            <p style="max-width: 700px; color: var(--clr-text-light);">We are looking for passionate engineers, salespeople, and visionaries to join our Haridwar hub.</p>
+        </div>
+    </header>
+
+    <section class="section-padding">
+        <div class="container">
+            <div style="background: var(--clr-primary); padding: 4rem; border-radius: 12px; color: white;">
+                <h2 style="color: white; margin-bottom: 2rem;">Why Join Us?</h2>
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                    <div style="text-align: left;">
+                        <h4 style="color: var(--clr-accent); margin-bottom: 1rem;">Innovation First</h4>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Work with the latest TopCon and Bifacial N-Type technologies in a world-class environment.</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="color: var(--clr-accent); margin-bottom: 1rem;">Growth Opportunity</h4>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">We are a rapidly expanding regional leader with 1.5GW+ of industrial momentum.</p>
+                    </div>
+                    <div style="text-align: left;">
+                        <h4 style="color: var(--clr-accent); margin-bottom: 1rem;">Social Impact</h4>
+                        <p style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">Contribute to India's energy independence through the PM Surya Ghar Muft Bijli Yojana.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 5rem;" data-aos="fade-up">
+                <h2 style="margin-bottom: 3rem;">Open Roles</h2>
+                <div style="display: grid; gap: 1.5rem;">
+                    <div style="border: 1px solid #eee; padding: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin-bottom: 0.5rem;">Solar Design Engineer</h3>
+                            <p style="color: var(--clr-text-light); font-size: 0.9rem;">HARIDWAR, INDIA | FULL-TIME</p>
+                        </div>
+                        <a href="mailto:{{ content.contact_email }}" class="btn btn-primary" style="background: var(--clr-accent); color: white;">APPLY NOW</a>
+                    </div>
+                    <div style="border: 1px solid #eee; padding: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 style="margin-bottom: 0.5rem;">Technical Sales Associate</h3>
+                            <p style="color: var(--clr-text-light); font-size: 0.9rem;">UTTARAKHAND REGION | FULL-TIME</p>
+                        </div>
+                        <a href="mailto:{{ content.contact_email }}" class="btn btn-primary" style="background: var(--clr-accent); color: white;">APPLY NOW</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
