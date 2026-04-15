@@ -66,15 +66,16 @@
                 <!-- Add New Project Form -->
                 <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-main);">
                     <h3 style="margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--clr-accent); font-size: 1.1rem;">🏗️ Add New Project</h3>
-                    <form action="{{ url_for('add_project') }}" method="POST">
+                    <form action="{{ url_for('add_project') }}" method="POST" enctype="multipart/form-data">
                         <div class="form-group" style="margin-bottom: 1rem;">
                             <label style="font-size: 0.7rem;">Project Title</label>
                             <input type="text" name="title" placeholder="e.g. 5kW System in Haridwar" required style="padding: 0.7rem;">
                         </div>
                         <div class="form-group" style="margin-bottom: 1rem;">
-                            <label style="font-size: 0.7rem;">Image Link (URL)</label>
-                            <input type="text" name="image_path" placeholder="https://link-to-image.com/photo.jpg" required style="padding: 0.7rem;">
-                            <small style="font-size: 0.6rem; color: #999;">Upload image to ImgBB/PostImages and paste link here.</small>
+                            <label style="font-size: 0.7rem;">Upload Local Image OR Enter Image URL</label>
+                            <input type="file" name="image_file" accept="image/*" style="padding: 0.7rem; border: 1px dashed var(--clr-primary); width: 100%; margin-bottom: 0.5rem; font-size: 0.8rem; background: #fdfdfd;">
+                            <div style="text-align: center; font-size: 0.7rem; color: #94a3b8; margin-bottom: 0.5rem;">— OR —</div>
+                            <input type="text" name="image_path" placeholder="https://link-to-image.com/photo.jpg" style="padding: 0.7rem;">
                         </div>
                         <div class="form-group" style="margin-bottom: 1rem;">
                             <label style="font-size: 0.7rem;">Short Description</label>
@@ -107,12 +108,12 @@
                 <!-- Content Editor -->
                 <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--shadow-main);">
                     <h3 style="margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--clr-accent); font-size: 1.1rem;">✏️ Edit Website Text & Settings</h3>
-                    <form action="{{ url_for('update_content') }}" method="POST">
+                    <form action="{{ url_for('update_content') }}" method="POST" enctype="multipart/form-data">
                         <div style="display: grid; gap: 1rem;">
                             {% for item in all_content %}
                             <div class="form-group" style="margin-bottom: 0; padding: 1rem; background: #f8fafc; border-radius: 8px;">
                                 <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                    <span style="font-size: 0.75rem; color: var(--clr-primary);">{{ item.key.replace('_', ' ') | upper }}</span>
+                                    <span style="font-size: 0.75rem; color: var(--clr-primary); font-weight: 700;">{{ item.key.replace('_', ' ') | upper }}</span>
                                     <span style="font-size: 0.6rem; color: var(--clr-accent);">Page: {{ item.page }}</span>
                                 </label>
                                 {% if item.value|length > 100 %}
@@ -121,10 +122,14 @@
                                 <input type="text" name="{{ item.key }}" value="{{ item.value }}">
                                 {% endif %}
                                 
-                                {% if 'http' in item.value and ('.jpg' in item.value or '.png' in item.value) %}
-                                <div style="margin-top: 0.5rem;">
-                                    <small style="font-size: 0.6rem;">Current Image Preview:</small><br>
-                                    <img src="{{ item.value }}" style="height: 60px; border-radius: 4px; border: 1px solid #ddd; margin-top: 0.2rem;">
+                                {% if 'bg' in item.key or 'image' in item.key or ('.jpg' in item.value or '.png' in item.value) %}
+                                <div style="margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid #e2e8f0;">
+                                    <label style="font-size: 0.65rem; color: var(--clr-text-light); display: block; margin-bottom: 0.3rem;">Upload New Image to Replace:</label>
+                                    <input type="file" name="image_file_{{ item.key }}" accept="image/*" style="padding: 0.5rem; border: 1px dashed #cbd5e1; font-size: 0.75rem; width: 100%;">
+                                    <div style="margin-top: 0.5rem;">
+                                        <small style="font-size: 0.6rem; color: #94a3b8;">Current Image Preview:</small><br>
+                                        <img src="{{ item.value }}" style="height: 60px; border-radius: 4px; border: 1px solid #ddd; margin-top: 0.2rem; background: #eee; object-fit: cover; max-width: 100%;">
+                                    </div>
                                 </div>
                                 {% endif %}
                             </div>

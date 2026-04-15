@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from models import db, Admin, SiteContent, Lead, Project
+from werkzeug.utils import secure_filename
 import os
 import threading
 import time
@@ -9,6 +10,8 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///kavya_solar.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'kavya-solar-secret-key-2026')
+app.config['UPLOAD_FOLDER'] = os.path.join('static', 'assets', 'uploads')
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # ============================================
 # KEEP-ALIVE SYSTEM - Prevents Render Sleep
@@ -188,6 +191,17 @@ def add_project():
     image_path = request.form.get('image_path')
     description = request.form.get('description')
     
+    if 'image_file' in request.files:
+        file = request.files['image_file']
+        if file and file.filename != '':
+            filename = secure_filename(file.filename)
+            file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(file_path)
+            image_path = url_for('static', filename=f'assets/uploads/{filename}')
+            
+    if not image_path:
+        image_path = "https://via.placeholder.com/400x300?text=No+Image"
+    
     new_project = Project(title=title, image_path=image_path, description=description)
     db.session.add(new_project)
     db.session.commit()
@@ -214,6 +228,16 @@ def update_content():
         content = SiteContent.query.filter_by(key=key).first()
         if content:
             content.value = value
+            
+            # Check for file upload corresponding to this key
+            file_key = f'image_file_{key}'
+            if file_key in request.files:
+                file = request.files[file_key]
+                if file and file.filename != '':
+                    filename = secure_filename(file.filename)
+                    file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+                    file.save(file_path)
+                    content.value = url_for('static', filename=f'assets/uploads/{filename}')
     db.session.commit()
     flash('Settings Updated Successfully!', 'success')
     return redirect(url_for('admin_dashboard'))
