@@ -1,22 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    --clr-primary: #004B50; /* Rayzon Teal */
+    /* Premium Color Palette */
+    --clr-primary: #063133; /* Deep Luxury Teal */
+    --clr-primary-light: #0d5c60; /* Vibrant Accent Teal */
     --clr-secondary: #005696; /* Professional Blue */
-    --clr-accent: #C5A059; /* Elegant Gold */
-    --clr-accent-light: #F4E8D1;
+    --clr-accent: #D4AF37; /* Metallic Gold */
+    --clr-accent-light: #F9F3E3; /* Soft Gold Tint */
+    --clr-accent-glow: #FCEABB; /* Gold Glow */
     --clr-text: #1a1a1a;
-    --clr-text-light: #666666;
-    --clr-bg-light: #F8F9FA;
+    --clr-text-light: #4A5568; /* Slate gray for better readability */
+    --clr-bg-light: #F8FAFC; /* Crisp cool gray instead of generic off-white */
     --clr-white: #ffffff;
-    --clr-orange: #C5A059;
+    --clr-orange: #D4AF37;
     
     --ff-heading: 'Montserrat', sans-serif;
     --ff-body: 'Inter', sans-serif;
     
-    --shadow-main: 0 15px 35px rgba(0, 75, 80, 0.08);
+    /* Modern Shadows & Depth */
+    --shadow-main: 0 20px 40px rgba(6, 49, 51, 0.08); /* Colored shadow base */
+    --shadow-hover: 0 25px 50px rgba(6, 49, 51, 0.15);
     --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    /* Premium Transitions */
+    --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 * {
@@ -45,16 +53,18 @@ h1, h2, h3, h4, .logo-text {
     padding: 0 2rem;
 }
 
-/* --- Gradient Text Utilities --- */
+/* --- Premium Gradient Utilities --- */
 .gradient-text-gold {
-    background: linear-gradient(135deg, #C5A059, #E8D5A3, #C5A059);
+    background: linear-gradient(135deg, #D4AF37 0%, #FCEABB 50%, #D4AF37 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: shine 5s linear infinite;
 }
 
 .gradient-text-green {
-    background: linear-gradient(135deg, #004B50, #00888F);
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -244,24 +254,43 @@ nav.scrolled .hamburger span {
 }
 
 .btn-primary {
-    background: var(--clr-primary);
+    background: linear-gradient(135deg, var(--clr-primary), var(--clr-primary-light));
     color: var(--clr-white);
+    box-shadow: 0 10px 20px rgba(6, 49, 51, 0.2);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-primary));
+    opacity: 0;
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
 }
 
 .btn-primary:hover {
-    background: var(--clr-secondary);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-main);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
 }
 
 .btn-primary-lite {
-    background: var(--clr-accent);
-    color: var(--clr-white);
+    background: linear-gradient(135deg, #D4AF37, #b59049);
+    color: var(--clr-primary);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
 }
 
 .btn-primary-lite:hover {
-    background: #b59049;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    color: white;
 }
 
 .btn-outline {
@@ -299,8 +328,9 @@ nav.scrolled .hamburger span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 75, 80, 0.85) 0%, rgba(0, 75, 80, 0.4) 50%, transparent 100%);
+    background: linear-gradient(135deg, rgba(6, 49, 51, 0.95) 0%, rgba(6, 49, 51, 0.6) 40%, rgba(0,0,0,0.4) 100%);
     z-index: 1;
+    backdrop-filter: blur(2px);
 }
 
 .hero .container {
@@ -408,9 +438,9 @@ nav.scrolled .hamburger span {
 }
 
 .feature-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-12px);
     border-bottom: 3px solid var(--clr-accent);
-    box-shadow: 0 20px 50px rgba(0, 75, 80, 0.12);
+    box-shadow: var(--shadow-hover);
 }
 
 .feature-card h3 {
@@ -527,11 +557,11 @@ footer {
     font-size: 0.85rem;
 }
 
-/* --- Smooth Page Transitions --- */
+/* --- Smooth Page Transitions & Micro Animations --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -539,8 +569,42 @@ footer {
     }
 }
 
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
 .hero-content {
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.feature-card img {
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.feature-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Glassmorphism Classes for use in HTML */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* --- Scrollbar --- */

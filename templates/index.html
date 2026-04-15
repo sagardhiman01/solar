@@ -6,11 +6,12 @@
         <div class="hero-video-overlay"></div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up">
-                <h1>{{ content.home_hero_title }}</h1>
-                <p>{{ content.home_hero_sub }}</p>
-                <div style="display: flex; gap: 1.5rem;">
-                    <a href="{{ url_for('contact') }}" class="btn btn-primary-lite">CHECK SUBSIDY ELIGIBILITY</a>
-                    <a href="{{ url_for('products') }}" class="btn btn-primary" style="background: transparent; border: 1px solid white;">SEE HOME PACKAGES</a>
+                <span class="badge-mini" style="margin-bottom: 1rem; display: inline-block; animation: pulse-glow 2s infinite; border: 1px solid var(--clr-accent);">PREMIUM HOME SOLAR</span>
+                <h1 style="text-shadow: 0 4px 20px rgba(0,0,0,0.3);">{{ content.home_hero_title }}</h1>
+                <p style="font-size: 1.3rem; margin-bottom: 2.5rem; color: rgba(255,255,255,0.9); font-weight: 300;">{{ content.home_hero_sub }}</p>
+                <div style="display: flex; gap: 1.5rem; align-items: center;">
+                    <a href="{{ url_for('contact') }}" class="btn btn-primary-lite" style="animation: float 6s ease-in-out infinite;">CHECK SUBSIDY ELIGIBILITY</a>
+                    <a href="{{ url_for('products') }}" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white; backdrop-filter: blur(5px);">SEE HOME PACKAGES</a>
                 </div>
             </div>
         </div>
